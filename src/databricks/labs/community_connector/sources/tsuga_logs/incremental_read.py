@@ -27,12 +27,12 @@ def collect_windowed_records(
     end_exclusive_seconds: int,
     window_seconds: int,
     max_concurrency: int,
-    max_events: int | None,
+    max_records: int | None,
     seen_fingerprints_at_cursor: set[str],
     fetch_windows: FetchWindowsFn,
 ) -> WindowedReadResult:
     collected: list[NormalizedLogRecord] = []
-    remaining = max_events
+    remaining = max_records
     next_start_seconds = start_seconds
     first_batch = True
 

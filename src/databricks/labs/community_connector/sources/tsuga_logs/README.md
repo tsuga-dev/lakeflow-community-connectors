@@ -38,7 +38,7 @@ Provide the following **connection-level** options when configuring the connecto
 | `externalOptionsAllowList` | string | yes | Comma-separated list of option names allowed to pass through the connection. Must include the framework options (`tableName,tableNameList,tableConfigs,isDeleteFlow`) plus any per-table source options you use. The `community-connector` CLI derives this from the spec automatically; set it manually when creating the connection in the UI. | see below |
 
 The full recommended `externalOptionsAllowList` value is:
-`tableName,tableNameList,tableConfigs,isDeleteFlow,query,cluster_id,initial_lookback_seconds,incremental_overlap_seconds,window_seconds,page_size,max_concurrency,max_events_per_sync,request_timeout_seconds,allow_truncated_seconds`
+`tableName,tableNameList,tableConfigs,isDeleteFlow,query,cluster_id,initial_lookback_seconds,incremental_overlap_seconds,window_seconds,page_size,max_concurrency,max_records_per_batch,request_timeout_seconds,allow_truncated_seconds`
 
 > **Note**: per-table options set via `table_configuration` in the pipeline spec must be in `externalOptionsAllowList` or they are **silently dropped** by the framework. With `query`/`cluster_id` set on the connection, the default pipeline spec needs no per-table options at all.
 
@@ -95,7 +95,7 @@ All of these are optional when `default_query`/`default_cluster_id` are set on t
 | `window_seconds` | No | `300` | Size of each incremental time window. |
 | `page_size` | No | `1000` | `maxResults` per API call (the public API caps this at 1000). |
 | `max_concurrency` | No | `1` | Number of windows fetched concurrently in one read. |
-| `max_events_per_sync` | No | unset | Caps the number of events returned in one read call. |
+| `max_records_per_batch` | No | unset | Caps the number of records returned in one read call. |
 | `request_timeout_seconds` | No | `60` | Per-request timeout. |
 | `allow_truncated_seconds` | No | `false` | When `true`, a single second whose volume exceeds the per-call cap is ingested partially (newest 1000 events) instead of failing the sync. Use for high-volume queries where occasional sub-second loss is acceptable. |
 

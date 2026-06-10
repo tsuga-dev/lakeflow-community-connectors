@@ -23,7 +23,7 @@ class TableOptions:
     window_seconds: int
     page_size: int
     max_concurrency: int
-    max_events_per_sync: int | None
+    max_records_per_batch: int | None
     request_timeout_seconds: int
     allow_truncated_seconds: bool
 
@@ -50,18 +50,11 @@ class TsugaLogsLakeflowConnect(LakeflowConnect):
         # Connection-level defaults; table options override per table. Named
         # default_* so they can never key-collide with per-table options —
         # the framework forbids a pipeline option whose key exists on the
-        # connection. Legacy unprefixed names still honored.
-        self._default_query = options.get("default_query") or options.get("query") or None
-        self._default_cluster_id = (
-            options.get("default_cluster_id") or options.get("cluster_id") or None
-        )
+        # connection.
+        self._default_query = options.get("default_query") or None
+        self._default_cluster_id = options.get("default_cluster_id") or None
         self._init_end_exclusive_seconds = int(datetime.now(timezone.utc).timestamp()) + 1
         self._extracted_at = datetime.now(timezone.utc).isoformat()
-        self._default_request_timeout_seconds = self._parse_positive_int(
-            options.get("request_timeout_seconds"),
-            key="request_timeout_seconds",
-            default=self.DEFAULT_REQUEST_TIMEOUT_SECONDS,
-        )
 
     def list_tables(self) -> list[str]:
         return ["logs"]
@@ -109,7 +102,7 @@ class TsugaLogsLakeflowConnect(LakeflowConnect):
             end_exclusive_seconds=self._init_end_exclusive_seconds,
             window_seconds=options.window_seconds,
             max_concurrency=options.max_concurrency,
-            max_events=options.max_events_per_sync,
+            max_records=options.max_records_per_batch,
             seen_fingerprints_at_cursor=set(
                 (start_offset or {}).get("seen_fingerprints_at_cursor", [])
             ),
@@ -180,7 +173,7 @@ class TsugaLogsLakeflowConnect(LakeflowConnect):
         # returns the same offset and the framework stops paginating.
         if cursor_seconds >= self._init_end_exclusive_seconds:
             return cursor_seconds
-        # Mid-run resume after a max_events_per_sync truncation: the saved
+        # Mid-run resume after a max_records_per_batch truncation: the saved
         # fingerprints dedup the boundary second, no overlap rewind needed.
         if start_offset.get("seen_fingerprints_at_cursor"):
             return cursor_seconds
@@ -224,14 +217,14 @@ class TsugaLogsLakeflowConnect(LakeflowConnect):
                 key="max_concurrency",
                 default=self.DEFAULT_MAX_CONCURRENCY,
             ),
-            max_events_per_sync=self._parse_optional_positive_int(
-                table_options.get("max_events_per_sync"),
-                key="max_events_per_sync",
+            max_records_per_batch=self._parse_optional_positive_int(
+                table_options.get("max_records_per_batch"),
+                key="max_records_per_batch",
             ),
             request_timeout_seconds=self._parse_positive_int(
                 table_options.get("request_timeout_seconds"),
                 key="request_timeout_seconds",
-                default=self._default_request_timeout_seconds,
+                default=self.DEFAULT_REQUEST_TIMEOUT_SECONDS,
             ),
             allow_truncated_seconds=self._parse_bool(
                 table_options.get("allow_truncated_seconds"),

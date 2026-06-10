@@ -46,7 +46,7 @@ class TsugaLogsIncrementalReadTests(unittest.TestCase):
             end_exclusive_seconds=7,
             window_seconds=2,
             max_concurrency=1,
-            max_events=None,
+            max_records=None,
             seen_fingerprints_at_cursor=set(),
             fetch_windows=fake_fetch_windows,
         )
@@ -77,7 +77,7 @@ class TsugaLogsIncrementalReadTests(unittest.TestCase):
             end_exclusive_seconds=5,
             window_seconds=2,
             max_concurrency=1,
-            max_events=3,
+            max_records=3,
             seen_fingerprints_at_cursor=set(),
             fetch_windows=fake_fetch_windows,
         )

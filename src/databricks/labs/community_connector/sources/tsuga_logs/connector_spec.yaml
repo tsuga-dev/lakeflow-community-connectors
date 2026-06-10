@@ -48,4 +48,4 @@ connection:
 # parameter of the UC connection to allow them to be passed through.
 # Use a comma-separated string of option names.
 # ============================================================================
-external_options_allowlist: "query,cluster_id,initial_lookback_seconds,incremental_overlap_seconds,window_seconds,page_size,max_concurrency,max_events_per_sync,request_timeout_seconds,allow_truncated_seconds"
+external_options_allowlist: "query,cluster_id,initial_lookback_seconds,incremental_overlap_seconds,window_seconds,page_size,max_concurrency,max_records_per_batch,request_timeout_seconds,allow_truncated_seconds"
