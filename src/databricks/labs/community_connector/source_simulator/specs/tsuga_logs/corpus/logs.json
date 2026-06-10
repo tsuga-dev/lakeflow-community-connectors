@@ -1,0 +1,386 @@
+[
+ {
+  "timestamp": 1767266253599,
+  "level": "INFO",
+  "message": "Request completed successfully (req-000)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266297406,
+  "level": "INFO",
+  "message": "Sync finished (req-001)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266337050,
+  "level": "INFO",
+  "message": "Job scheduled (req-002)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266342999,
+  "level": "WARN",
+  "message": "Slow query detected (req-003)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266353226,
+  "level": "ERROR",
+  "message": "Upstream timeout (req-004)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266386047,
+  "level": "DEBUG",
+  "message": "Resolved segment from cache (req-005)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266386570,
+  "level": "INFO",
+  "message": "Request completed successfully (req-006)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266396879,
+  "level": "INFO",
+  "message": "Sync finished (req-007)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266452136,
+  "level": "INFO",
+  "message": "Job scheduled (req-008)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266471296,
+  "level": "WARN",
+  "message": "Slow query detected (req-009)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266485429,
+  "level": "ERROR",
+  "message": "Upstream timeout (req-010)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266607147,
+  "level": "DEBUG",
+  "message": "Resolved segment from cache (req-011)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266717553,
+  "level": "INFO",
+  "message": "Request completed successfully (req-012)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266979120,
+  "level": "INFO",
+  "message": "Sync finished (req-013)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767266979584,
+  "level": "INFO",
+  "message": "Job scheduled (req-014)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267014315,
+  "level": "WARN",
+  "message": "Slow query detected (req-015)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267085573,
+  "level": "ERROR",
+  "message": "Upstream timeout (req-016)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267426835,
+  "level": "DEBUG",
+  "message": "Resolved segment from cache (req-017)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267597698,
+  "level": "INFO",
+  "message": "Request completed successfully (req-018)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267717185,
+  "level": "INFO",
+  "message": "Sync finished (req-019)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267812105,
+  "level": "INFO",
+  "message": "Job scheduled (req-020)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267838595,
+  "level": "WARN",
+  "message": "Slow query detected (req-021)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767267876584,
+  "level": "ERROR",
+  "message": "Upstream timeout (req-022)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268178654,
+  "level": "DEBUG",
+  "message": "Resolved segment from cache (req-023)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268294192,
+  "level": "INFO",
+  "message": "Request completed successfully (req-024)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268357381,
+  "level": "INFO",
+  "message": "Sync finished (req-025)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268416099,
+  "level": "INFO",
+  "message": "Job scheduled (req-026)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268463560,
+  "level": "WARN",
+  "message": "Slow query detected (req-027)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268487729,
+  "level": "ERROR",
+  "message": "Upstream timeout (req-028)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "api"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268669064,
+  "level": "DEBUG",
+  "message": "Resolved segment from cache (req-029)",
+  "context": {
+   "team": "platform",
+   "env": "prod",
+   "service": {
+    "name": "worker"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268683577,
+  "level": "INFO",
+  "message": "Request completed successfully (req-030)",
+  "context": {
+   "team": "central",
+   "env": "prod",
+   "service": {
+    "name": "cluster-health"
+   }
+  }
+ },
+ {
+  "timestamp": 1767268766061,
+  "level": "INFO",
+  "message": "Sync finished (req-031)",
+  "context": {
+   "team": "platform",
+   "env": "staging",
+   "service": {
+    "name": "api"
+   }
+  }
+ }
+]

@@ -1,0 +1,16 @@
+# Tsuga public logs API endpoints exercised by the connector tests.
+#
+# `/v1/logs/search` takes `from`/`to` in epoch SECONDS while log records
+# carry epoch-MILLISECOND `timestamp`s, returns newest-first truncated at
+# `maxResults`, and exposes no cursor. The generic filter/pagination roles
+# can't express the unit conversion or the truncation-without-cursor
+# behavior, so a custom handler serves this endpoint. It also rebases the
+# corpus timestamps once per process so the newest record lands just before
+# wall-clock now, keeping the connector's lookback-from-now first read
+# non-empty.
+
+endpoints:
+  - path: /v1/logs/search
+    method: GET
+    corpus: logs
+    handler: databricks.labs.community_connector.source_simulator.specs.tsuga_logs.handlers.search_logs:search_logs

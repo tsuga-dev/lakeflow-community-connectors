@@ -1,0 +1,51 @@
+# Tsuga Logs Community Connector Spec
+# This file defines the specification for the connector including
+# connection parameters and allowlist options.
+
+# ============================================================================
+# Connection Parameters
+# These are provided when creating the Unity Catalog connection.
+# ============================================================================
+display_name: Tsuga Logs
+connection:
+  parameters:
+    - name: operation_api_key
+      type: string
+      required: true
+      secret: true
+      description: >
+        Tsuga operation API key used for public API authentication.
+        Generate one in Tsuga under Settings → Operation API keys.
+        The key determines which teams' logs are visible to the connector.
+
+    - name: base_url
+      type: string
+      required: false
+      description: >
+        Base URL for the Tsuga public API. Override for non-default
+        deployments. Defaults to https://api.tsuga.com if not specified.
+
+    - name: default_query
+      type: string
+      required: false
+      description: >
+        Tsuga query used to filter logs (e.g.
+        context.service.name:payments level:ERROR), for every table that
+        does not set its own 'query' table option. Required unless every
+        table sets one; use '*' explicitly to ingest all logs.
+
+    - name: default_cluster_id
+      type: string
+      required: false
+      description: >
+        Tsuga cluster to target for every table that does not set its own
+        'cluster_id' table option. Required for multi-cluster
+        organizations; omit to use the org's default cluster.
+
+# ============================================================================
+# External Options Allowlist
+# These table-specific options must be included in the externalOptionsAllowList
+# parameter of the UC connection to allow them to be passed through.
+# Use a comma-separated string of option names.
+# ============================================================================
+external_options_allowlist: "query,cluster_id,initial_lookback_seconds,incremental_overlap_seconds,window_seconds,page_size,max_concurrency,max_events_per_sync,request_timeout_seconds,allow_truncated_seconds"
