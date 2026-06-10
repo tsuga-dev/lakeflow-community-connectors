@@ -1,0 +1,22 @@
+tools/scripts/merge_exclude_config.json
+  s_1bad4c752e8c04::t_343144bf4c84a0 20-22
+  s_1bad4c752e8c04::t_cef44304b0236f 29-30
+.github/workflows/pylint.yml
+  s_1bad4c752e8c04::t_a26b72a9c8f5ea 122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "2d46d4a62c5aa492de042bbaec01f0c5e5a1ca8a",
+  "prompts": {},
+  "sessions": {
+    "s_1bad4c752e8c04": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d908e146-2091-4b1d-9c4c-61bcc2785247",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Arthur Verrez <arthurverrez@gmail.com>"
+    }
+  }
+}
