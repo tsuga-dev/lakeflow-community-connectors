@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-10T16:20:00.358280Z",
+  "endpoints": [
+    {
+      "method": "GET",
+      "spec_path": "/v1/logs/search",
+      "sample_url": "https://api.tsuga.com/v1/logs/search?from=1781108269&to=1781108388&query=context.service.name%3Aweb-backend&maxResults=1000&clusterId=j9k-9Ln-vnV",
+      "status": "validated",
+      "calls": 10,
+      "matched": 10,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    }
+  ],
+  "summary": {
+    "endpoints_total": 1,
+    "endpoints_validated": 1,
+    "endpoints_mismatched": 0,
+    "endpoints_missing_spec": 0
+  }
+}

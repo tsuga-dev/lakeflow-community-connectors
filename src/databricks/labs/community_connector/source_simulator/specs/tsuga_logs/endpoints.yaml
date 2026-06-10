@@ -8,6 +8,12 @@
 # corpus timestamps once per process so the newest record lands just before
 # wall-clock now, keeping the connector's lookback-from-now first read
 # non-empty.
+#
+# Future-record synthesis (what the ``synthesize_future_records:``
+# directive does for ISO-8601 cursor fields) is implemented inside the
+# handler, because ``timestamp`` is epoch milliseconds: the handler clones
+# the newest record to timestamps past wall-clock now, so a connector
+# missing its init-time cap fails ``test_read_terminates``.
 
 endpoints:
   - path: /v1/logs/search

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "endpoints": [
+    {
+      "method": "GET",
+      "url": "https://api.tsuga.com/v1/logs/search",
+      "count": 10,
+      "param_shapes": [
+        [
+          "clusterId",
+          "from",
+          "maxResults",
+          "query",
+          "to"
+        ]
+      ]
+    }
+  ]
+}
